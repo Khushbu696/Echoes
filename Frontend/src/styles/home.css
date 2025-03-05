@@ -1,0 +1,198 @@
+.home-header{
+    background: url("../assets/pink.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+}
+.home-header-container{
+    margin: 200px auto;
+    padding: 25px;
+    width: 65%;
+    text-align: center;
+    color: black;
+}
+.home-header h1{
+    font-family: Spectral, sans-serif;
+    font-size: 3.5rem;
+}
+.home-header h3{
+    font-family: Rubik, serif;
+    font-size: 1.5rem;
+}
+
+
+
+.home-services{
+    background-color: #fafafa;
+    margin: 200px 0;
+    padding: 80px 25px;
+    color: #212529;
+    text-align: center;
+}
+.home-services-content{
+    width: 88%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.home-services h2{
+    color: #102660 ;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+}
+.home-services-content h3{
+    color: #DC143C;
+    font-family: Spectral, sans-serif;
+    font-size: 2rem;
+}
+.home-services-content div{
+    background-color: white;
+    border: 1px solid lightgray;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    margin: 30px 0;
+    padding: 15px;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+
+
+.home-features{
+    margin: 200px 0;
+    color: #212529;
+}
+.home-features h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+.home-features-content{
+    margin: 80px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.image{
+    width: 30%;
+}
+.text{
+    width: 30%;
+    padding: 10px;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.text h3{
+    color: #DC143C;
+    font-family: Spectral, sans-serif;
+    font-size: 2rem;
+}
+
+
+
+.home-discover{
+    margin: 200px 0;
+    padding: 80px 25px;
+    background-color: #fafafa;
+}
+.home-discover-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    color: #212529;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.home-discover h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+
+
+.home-what{
+    margin: 200px 0;
+    /* border: 2px solid red; */
+}
+.home-what-container{
+    background-color: aliceblue;
+    /* background-color: #dbdbdb; */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 20px;
+    color: #212529;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.home-what h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+
+
+.home-cards{
+    background-color: #fafafa;
+    margin: 200px 0;
+    padding: 80px 25px;
+    color: #212529;
+}
+.home-cards h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+
+
+.home-connect{
+    margin: 200px 0;
+    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.home-connect-right{
+    width: 40%;
+}
+.home-connect-right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.home-connect-left{
+    width: 40%;
+    color: #212529;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.home-connect-left h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+}
+.home-form div{
+    margin: 20px 0;
+}
+#join-us{
+    background-color: #212529;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}

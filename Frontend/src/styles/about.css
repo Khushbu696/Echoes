@@ -1,0 +1,104 @@
+.about-journey{
+    margin: 100px 0 200px 0;
+    color: #212529;
+    display: flex;
+    justify-content: space-evenly;
+}
+.about-journey-left{
+    width: 40%;
+    padding: 150px 20px;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.about-journey-left h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+.about-journey-right{
+    width: 40%;
+}
+
+
+
+.about-visionaries{
+    margin: 200px 0;
+    background-color: #fafafa;
+    color: #212529;
+    padding: 80px 50px;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.about-visionaries h2, .about-mission h2, .about-vision-content h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+}
+.visionaries{
+    margin: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visionaries h3, .about-mission01 h3, .about-mission02 h3{
+    color: crimson;
+    font-family: Spectral, sans-serif;
+    font-size: 2rem;
+}
+.visionaries img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+
+.about-mission{
+    margin: 200px 0;
+    color: #212529;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.about-mission01{
+    width: 63%;
+    padding: 50px 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    background-color: #dbdbdb;
+}
+.about-mission-content{
+    display: flex;
+    justify-content: center;
+}
+.about-mission02{
+    width: 30%;
+    padding: 30px 20px;
+    margin-left: 50px;
+    background-color: #dbdbdb;
+    border-radius: 10px;
+}
+
+
+
+.about-vision{
+    margin: 200px 0;
+    padding: 80px 50px;
+    color: #212529;
+    background-color: #fafafa;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.about-vision-content{
+    background-color: #dbdbdb;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 50px 20px;
+}

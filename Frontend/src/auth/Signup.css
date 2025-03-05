@@ -1,0 +1,41 @@
+.sign-up{
+    /* border: 2px solid red; */
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up-form{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 40%;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.sign-up-form h1{
+    color: #102660 ;
+    font-family: Spectral, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.sign-up-form h3{
+    color: #DC143C;
+    font-family: Rubik, serif;
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
+
+#btn{
+    display: block;
+    margin: 30px auto;
+}
+
+#option{
+    font-family: Rubik, serif;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}

@@ -1,0 +1,26 @@
+.contact-container{
+    margin: 100px 0 200px 0;
+    color: #212529;
+    display: flex;
+    justify-content: space-between;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.contact-container-left{
+    width: 50%;
+    padding: 50px 100px;
+}
+.contact-container-right{
+    background-color: #dbdbdb;
+    width: 50%;
+    padding: 120px 100px;
+}
+.contact-container-left h2, .contact-container-right h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+}
+.contact-form div, .contact-list div{
+    margin: 30px 0;
+}

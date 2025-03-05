@@ -1,0 +1,107 @@
+.services-header{
+    margin: 100px auto 200px auto;
+    color: #212529;
+    text-align: center;
+}
+.services-header h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+}
+.services-header-content{
+    margin: 50px auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.services-header-container{
+    background-color: #dbdbdb;
+    margin: 30px 0;
+    padding: 15px;
+    width: 350px;
+    border-radius: 10px;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.services-header-container h3{
+    color: #dc143c;
+    font-family: Spectral, sans-serif;
+    font-size: 2rem;
+}
+
+
+
+.services-diff{
+    margin: 200px 0;
+    padding: 80px 50px;
+    background-color: #fafafa;
+    text-align: center;
+    color: #212529;
+}
+.services-diff h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+}
+.services-diff-content{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+}
+.services-diff-content h3{
+    color: #dc143c;
+    font-family: Spectral, sans-serif;
+    font-size: 2rem;
+}
+.services-diff-content div{
+    background-color: white;
+    border: 1px solid lightgray;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+
+
+.services-growth{
+    margin: 200px 0;
+    color: #212529;
+    display: flex;
+    justify-content: space-evenly;
+}
+.services-growth-left{
+    width: 40%;
+    padding: 120px 0;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+}
+.services-growth-left h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+}
+.services-growth-right{
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    text-align: center;
+}
+.services-growth-right h3{
+    color: #dc143c;
+    font-family: Spectral, sans-serif;
+    font-size: 2rem;
+}
+.services-growth-right div{
+    background-color: #dbdbdb;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 20px;
+    width: 200px;
+}

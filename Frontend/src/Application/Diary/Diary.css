@@ -1,0 +1,112 @@
+.diary{
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diary-container{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 10px lightgray;
+    width: 97%;
+    height: 95%;
+    padding: 10px;
+    display: flex;
+}
+
+
+
+.diary-left{
+    border-radius: 20px 0 0 20px;
+    background-color: #089bab;
+    padding: 0 10px;
+    text-align: center;
+    font-family: Rubik, serif;
+    font-weight: bold;
+}
+.diary-left-content{
+    border: 2px solid transparent;
+    margin: 30px 0;
+    padding: 15px 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.diary-left-content:hover{
+    border: 2px solid white;
+}
+.diary-left-content img{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+
+
+.diary-middle{
+    background-color: aliceblue;
+    color: #089bab;
+    width: 50%;
+    padding: 10px;
+    font-family: Rubik, serif;
+}
+.diary-middle h1{
+    font-family: Spectral, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.diary-middle-display{
+    /* border: 2px solid black; */
+    height: 505px;
+    margin-top: 15px;
+    overflow-y: auto;
+}
+.diary-middle-each{
+    border-radius: 20px;
+    background-color: white;
+    width: 95%;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.diary-middle-each:hover{
+    box-shadow: 2px 2px 10px lightgray, -2px -2px 10px lightgray;
+    cursor: pointer;
+}
+.diary-middle-display img{
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.diary-middle-create{
+    border: 2px solid #089bab;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.diary-middle-create:hover{
+    color: white;
+    background-color: #089bab;
+}
+
+
+
+.diary-right{
+    color: #089bab;
+    border: 2px solid #089bab;
+    border-radius: 0 20px 20px 0;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Rubik, serif;
+    font-size: 1.2rem;
+}

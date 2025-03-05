@@ -1,0 +1,26 @@
+.testimonals{
+    margin: 100px 0 200px 0;
+    color: #212529;
+    font-family: Rubik, serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.testimonals h2{
+    color: #102660;
+    font-family: Spectral, sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+}
+.testimonals-container{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.testimonals-container div{
+    background-color: #dbdbdb;
+    border-radius: 10px;
+    width: 400px;
+    margin: 30px;
+    padding: 20px;
+}
