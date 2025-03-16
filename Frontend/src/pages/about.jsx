@@ -3,12 +3,20 @@ import person01 from '../assets/person01.png'
 import person02 from '../assets/person02.png'
 import '../styles/about.css'
 import { Link } from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../pages/Loader";
 
-function about() {
+function About() {
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to top when component mounts
-      }, []);
+        setTimeout(() => setLoading(false), 1000); // Simulating a loading delay
+    }, []);
+
+    if (loading) {
+        return <div className="flex items-center justify-center min-h-screen"><Loader /></div>;
+    }
 
     return (
         <>
@@ -131,4 +139,4 @@ function about() {
     )
 }
 
-export default about
+export default About

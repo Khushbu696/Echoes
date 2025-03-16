@@ -4,25 +4,27 @@ import { Button, Input } from "@chakra-ui/react";
 import { Toaster, toaster } from "@/components/ui/toaster";
 import { PasswordInput } from "@/components/ui/password-input";
 import axios from "axios";
-import './Signup.css';
+import "./Signup.css";
 
 const Signup = () => {
     const [formData, setFormData] = useState({
         fullName: "",
-        userName: "",
+        username: "",
         email: "",
         password: "",
     });
+
+    const [loading, setLoading] = useState(false); // New state for loading
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async () => {
-        const { fullName, userName, email, password } = formData;
+        const { fullName, username, email, password } = formData;
 
         // Validation: Check if fields are empty
-        if (!fullName || !userName || !email || !password) {
+        if (!fullName || !username || !email || !password) {
             toaster.error({
                 title: "Error",
                 description: "All fields are required!",
@@ -31,9 +33,10 @@ const Signup = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/api/users/register", {
-                fullName,  // Corrected field name
-                userName,  // Corrected field name
+            setLoading(true); // Show loading state
+            const response = await axios.post("http://localhost:5000/signup", {
+                fullName,
+                username,
                 email,
                 password,
             });
@@ -43,16 +46,16 @@ const Signup = () => {
                 description: response.data.message || "Account created successfully!",
             });
 
-            // Optionally, redirect to Sign In page after signup
             setTimeout(() => {
-                window.location.href = "/signin";
+                window.location.href = "/dashboard"; // Redirect after successful signup
             }, 2000);
-
         } catch (error) {
             toaster.error({
                 title: "Signup Failed",
-                description: error.response?.data?.message || "Something went wrong",
+                description: error.response?.data?.error || "Something went wrong",
             });
+        } finally {
+            setLoading(false); // Stop loading state
         }
     };
 
@@ -74,8 +77,8 @@ const Signup = () => {
                     <h3>User Name:</h3>
                     <Input
                         placeholder="johndoe"
-                        name="userName"
-                        value={formData.userName}
+                        name="username"
+                        value={formData.username}
                         onChange={handleChange}
                     />
 
@@ -96,11 +99,11 @@ const Signup = () => {
                         onChange={handleChange}
                     />
 
-                    <Button colorPalette="green" id="btn" onClick={handleSubmit}>
-                        Sign Up
+                    <Button colorPalette="green" id="btn" onClick={handleSubmit} isLoading={loading}>
+                        {loading ? "Signing Up..." : "Sign Up"}
                     </Button>
 
-                    <div id='option'>
+                    <div id="option">
                         Already have an account?{" "}
                         <Link to="/signin" style={{ color: "blue", fontWeight: "bold" }}>
                             Sign in

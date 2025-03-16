@@ -7,12 +7,20 @@ import chat from '../assets/chat.jpg'
 import community from '../assets/community.png'
 import image01 from '../assets/image01.png'
 import { Link } from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../pages/Loader";
 
 function home() {
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to top when component mounts
-      }, []);
+        setTimeout(() => setLoading(false), 1000); // Simulating a loading delay
+    }, []);
+
+    if (loading) {
+        return <div className="flex items-center justify-center min-h-screen"><Loader /></div>;
+    }
 
     const items = [
         { value: "a", title: "1. What makes Echoes unique?", text: "Echoes is a compelling online social media platform where users can write their diary in digital format, preserving their treasured memories, connecting with people, sharing emotions, and engaging in meaningful conversations." },

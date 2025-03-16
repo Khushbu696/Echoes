@@ -1,11 +1,19 @@
 import '../styles/testimonals.css'
 import { Link } from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../pages/Loader";
 
 function testimonals() {
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to top when component mounts
-      }, []);
+        setTimeout(() => setLoading(false), 1000); // Simulating a loading delay
+    }, []);
+
+    if (loading) {
+        return <div className="flex items-center justify-center min-h-screen"><Loader /></div>;
+    }
 
     return (
         <>
