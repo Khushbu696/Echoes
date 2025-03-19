@@ -7,9 +7,9 @@ import account_icon from '../../assets/account-icon.png'
 import setting_icon from '../../assets/setting-icon.png'
 import chat_icon from '../../assets/chat-icon.png'
 import diary_icon from '../../assets/diary-icon.png'
-import person01 from '../../assets/person01.png'
 
 function Dashboard() {
+
     return (
         <>
             <Tooltip id="my-tooltip" place="right" />
@@ -18,7 +18,7 @@ function Dashboard() {
                 <div className="dashboard-container">
                     <div className="dashboard-left">
                         <div className="dashboard-left-content" style={{ border: "2px solid white" }} data-tooltip-id="my-tooltip" data-tooltip-content="Dashboard">
-                        <img src={dashboard_icon} alt="dashboard_icon" />
+                            <img src={dashboard_icon} alt="dashboard_icon" />
                         </div>
 
                         <div className="dashboard-left-content" data-tooltip-id="my-tooltip" data-tooltip-content="Diary">
@@ -44,8 +44,7 @@ function Dashboard() {
 
                     <div className="dashboard-right">
                         <div className="dashboard-profile">
-                            <div>Alexa Smith</div>
-                            <div id='profile-imgage'><img src={person01} alt="person profile" /></div>
+                            <div>Hello there! Keep pushing forward—great things are ahead!</div>
                         </div>
                     </div>
                 </div>

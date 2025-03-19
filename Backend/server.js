@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const User = require('./models/User');
+const Diary = require("./models/Diary_Model");
 
 dotenv.config();
 const app = express();
@@ -14,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 if (!MONGO_URI) {
-  console.error("❌ MongoDB connection string is missing in .env file!");
+  console.error("MongoDB connection string is missing in .env file!");
   process.exit(1); // Stop the server if no DB connection string
 }
 
@@ -23,9 +24,9 @@ mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log('✅ MongoDB connected'))
+  .then(() => console.log('MongoDB connected'))
   .catch((err) => {
-    console.error('❌ MongoDB connection error:', err);
+    console.error('MongoDB connection error:', err);
     process.exit(1);
   });
 
@@ -77,5 +78,114 @@ app.post("/api/signin", async (req, res) => {
 });
 
 
+// Route to add a new diary
+app.post("/api/add-diary", async (req, res) => {
+  try {
+    const { title } = req.body;
+    const newDiary = new Diary({ title });
+    await newDiary.save();
+    res.status(201).json(newDiary);
+  } catch (error) {
+    res.status(500).json({ error: "Error creating diary" });
+  }
+});
 
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+// Route to get all diaries
+app.get("/api/diaries", async (req, res) => {
+  try {
+    const diaries = await Diary.find().sort({ createdAt: -1 }); // Latest first
+    res.json(diaries);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching diaries" });
+  }
+});
+
+
+// Route to Add an entry in diary
+app.post("/api/add-entry", async (req, res) => {
+  try {
+    const { diaryId, title, content } = req.body; // Accept title from request
+    const diary = await Diary.findById(diaryId);
+    if (!diary) {
+      return res.status(404).json({ error: "Diary not found" });
+    }
+
+    const newEntry = { title, content, createdAt: new Date() }; // Include title
+    diary.entries.push(newEntry);
+    await diary.save();
+
+    res.status(201).json(newEntry);
+  } catch (error) {
+    res.status(500).json({ error: "Error adding entry" });
+  }
+});
+
+
+// Route to Fetch Diary with Entries
+app.get("/api/diary/:id", async (req, res) => {
+  try {
+    const diary = await Diary.findById(req.params.id);
+    if (!diary) {
+      return res.status(404).json({ error: "Diary not found" });
+    }
+
+    // Ensure each entry has a title (fallback to "Untitled Entry" if missing)
+    const formattedEntries = diary.entries.map(entry => ({
+      _id: entry._id,
+      title: entry.title || "Untitled Entry", // Ensure title is always present
+      content: entry.content,
+      createdAt: entry.createdAt
+    }));
+
+    res.json({
+      _id: diary._id,
+      title: diary.title,
+      createdAt: diary.createdAt,
+      entries: formattedEntries
+    });
+
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching diary" });
+  }
+});
+
+
+// Route to Delete a Diary
+app.delete("/api/delete-diary/:id", async (req, res) => {
+  try {
+    const diary = await Diary.findByIdAndDelete(req.params.id);
+    if (!diary) {
+      return res.status(404).json({ error: "Diary not found" });
+    }
+    res.json({ message: "Diary deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Error deleting diary" });
+  }
+});
+
+
+//Route to Delete a entry in a diary
+app.delete("/api/delete-entry/:diaryId/:entryId", async (req, res) => {
+  try {
+      const { diaryId, entryId } = req.params;
+      const diary = await Diary.findById(diaryId);
+      
+      if (!diary) {
+          return res.status(404).json({ error: "Diary not found" });
+      }
+
+      // Filter out the entry to delete
+      diary.entries = diary.entries.filter(entry => entry._id.toString() !== entryId);
+      await diary.save();
+
+      res.status(200).json({ message: "Entry deleted successfully" });
+  } catch (error) {
+      res.status(500).json({ error: "Error deleting entry" });
+  }
+});
+
+
+
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
