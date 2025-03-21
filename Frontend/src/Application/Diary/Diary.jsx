@@ -121,7 +121,6 @@ function Diary() {
 
 
 
-
     return (
         <>
             <Tooltip id="my-tooltip" place="right" />
@@ -260,7 +259,7 @@ function Diary() {
                         </div>
 
                         <h1>{selectedEntry.title}</h1>
-                        <pre><p>{selectedEntry.content}</p></pre>
+                        <p>{selectedEntry.content}</p>
                     </div>
                 </div>
             )}

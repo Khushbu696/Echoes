@@ -7,8 +7,11 @@ import account_icon from '../../assets/account-icon.png'
 import setting_icon from '../../assets/setting-icon.png'
 import chat_icon from '../../assets/chat-icon.png'
 import diary_icon from '../../assets/diary-icon.png'
+import React, { useState, useEffect } from "react";
+import MoodSelector from "./MoodSelector";
 
 function Dashboard() {
+    const [mood, setMood] = useState(null);
 
     return (
         <>
@@ -40,6 +43,7 @@ function Dashboard() {
 
                     <div className="dashboard-middle">
                         <h1>Dashboard</h1>
+                        <MoodSelector onMoodSelect={setMood} />
                     </div>
 
                     <div className="dashboard-right">
